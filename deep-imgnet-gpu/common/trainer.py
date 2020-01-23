@@ -58,8 +58,8 @@ class Trainer:
                 x_train_sample, t_train_sample = self.x_train[:t], self.t_train[:t]
                 x_test_sample, t_test_sample = self.x_test[:t], self.t_test[:t]
                 
-            train_acc = self.network.accuracy(x_train_sample, t_train_sample)
-            test_acc = self.network.accuracy(x_test_sample, t_test_sample)
+            train_acc = self.network.accuracy(x_train_sample, t_train_sample, self.batch_size)
+            test_acc = self.network.accuracy(x_test_sample, t_test_sample, self.batch_size)
             self.train_acc_list.append(train_acc)
             self.test_acc_list.append(test_acc)
 
@@ -70,7 +70,7 @@ class Trainer:
         for i in range(self.max_iter):
             self.train_step()
 
-        test_acc = self.network.accuracy(self.x_test, self.t_test)
+        test_acc = self.network.accuracy(self.x_test, self.t_test, self.batch_size)
 
         if self.verbose:
             print("=============== Final Test Accuracy ===============")

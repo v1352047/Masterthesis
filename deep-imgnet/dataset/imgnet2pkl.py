@@ -20,11 +20,11 @@ for key, value in enumerate(apples):
 for key, value in enumerate(bananas):
     bananas[key] = plt.imread(value)
 #    デバッグ用コード
-    print(key)
-    print(value)
-    print(len(bananas[key]))
-    print(len(bananas[key][0]))
-    print(len(bananas[key][0][0]))
+#    print(key)
+#    print(value)
+#    print(len(bananas[key]))
+#    print(len(bananas[key][0]))
+#    print(len(bananas[key][0][0]))
 
 for key, value in enumerate(oranges):
     oranges[key] = plt.imread(value)
@@ -56,17 +56,17 @@ print("Changed the shapes of images lists.")
 
 
 #pickleに変換するために整形
-train_img = np.concatenate([apples[:2000], bananas[:2000], oranges[:2000], melons[:2000]])
-train_label = np.array(([0] * 2000) + ([1] * 2000) + ([2] * 2000) + ([3] * 2000))
-test_img = np.concatenate([apples[2000: 3200], bananas[2000: 3200], oranges[700: 3200], melons[2000: 3200]])
-test_label = np.array(([0] * 1200) + ([1] * 1200) + ([2] * 1200) + ([3] * 1200))
+train_img = np.concatenate([apples[:3000], bananas[:3000], oranges[:3000], melons[:3000]])
+train_label = np.array(([0] * 3000) + ([1] * 3000) + ([2] * 3000) + ([3] * 3000))
+test_img = np.concatenate([apples[3000: 3200], bananas[3000: 3200], oranges[3000: 3200], melons[3000: 3200]])
+test_label = np.array(([0] * 200) + ([1] * 200) + ([2] * 200) + ([3] * 200))
 
 print("Arranged all data to change into pickle.")
 
 
 #データをシャッフル
-shuffle_train = np.random.permutation(np.arange(8000))
-shuffle_test = np.random.permutation(np.arange(4800))
+shuffle_train = np.random.permutation(np.arange(12000))
+shuffle_test = np.random.permutation(np.arange(800))
 
 print("Shuffled all data.")
 
