@@ -3,12 +3,12 @@ import sys, os
 sys.path.append(os.pardir)  # 親ディレクトリのファイルをインポートするための設定
 import numpy as np
 import pickle
-from dataset.imgnet import load_imgnet
+from dataset.fruits import load_fruits
 from common.functions import sigmoid, softmax
 
 
 def get_data():
-    (x_train, t_train), (x_test, t_test) = load_imgnet(normalize=True, one_hot_label=False)
+    (x_train, t_train), (x_test, t_test) = load_fruits(normalize=True, one_hot_label=False)
     return x_test, t_test
 
 

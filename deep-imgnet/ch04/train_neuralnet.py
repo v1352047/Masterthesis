@@ -3,14 +3,12 @@ import sys, os
 sys.path.append(os.pardir)  # 親ディレクトリのファイルをインポートするための設定
 import numpy as np
 import matplotlib.pyplot as plt
-from dataset.imgnet import load_imgnet
+from dataset.fruits import load_fruits
 from two_layer_net import TwoLayerNet
 
 # データの読み込み
-(x_train, t_train), (x_test, t_test) = load_imgnet(normalize=True, one_hot_label=True)
+(x_train, t_train), (x_test, t_test) = load_fruits(normalize=True, one_hot_label=True)
 print(len(x_train))
-
-
 
 
 network = TwoLayerNet(input_size=30000, hidden_size=50, output_size=4)
@@ -24,7 +22,7 @@ train_loss_list = []
 train_acc_list = []
 test_acc_list = []
 
-iter_per_epoch = max(train_size / batch_size, 1)
+iter_per_epoch = max(train_size // batch_size, 1)
 
 for i in range(iters_num):
     batch_mask = np.random.choice(train_size, batch_size)
