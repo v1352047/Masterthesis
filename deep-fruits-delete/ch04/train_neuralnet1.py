@@ -12,11 +12,8 @@ from two_layer_net import TwoLayerNet
 
 
 #データの選別
-x_train_latter = x_train[6000: ]
-x_train = x_train[0: 6000]
-
-t_train_latter = t_train[6000: ]
-t_train = t_train[0: 6000]
+x_train = x_train[: 5000]
+t_train = t_train[: 5000]
 
 
 
@@ -32,7 +29,7 @@ train_loss_list = []
 train_acc_list = []
 test_acc_list = []
 
-iter_per_epoch = max(train_size / batch_size, 1)
+iter_per_epoch = max(train_size // batch_size, 1)
 
 for i in range(iters_num):
     batch_mask = np.random.choice(train_size, batch_size)

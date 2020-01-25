@@ -14,7 +14,7 @@ def get_data():
 
 x, t = get_data()
 network = DeepConvNet()
-network.load_params(file_name="first_learn.pkl")
+network.load_params(file_name="first-learn.pkl")
 accuracy = network.accuracy(x, t, batch_size=50)
 
 #accuracy_cnt = 0
@@ -25,7 +25,7 @@ accuracy = network.accuracy(x, t, batch_size=50)
 #accuracy_cnt = sum(p == t)
 
 
-print("Accuracy:" + accuracy)
-print("counter:" + str(len(x)))
+print("Accuracy:", accuracy)
+print("counter:", len(x))
 #print("Accuracy:" + str(float(accuracy_cnt) / len(x)))
 #print("counter:" + str(len(x)))

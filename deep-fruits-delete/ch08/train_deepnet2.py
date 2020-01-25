@@ -3,22 +3,19 @@ import sys, os
 sys.path.append(os.pardir)  # 親ディレクトリのファイルをインポートするための設定
 import numpy as np
 import matplotlib.pyplot as plt
-from dataset.imgnet import load_imgnet
+from dataset.fruits import load_fruits
 from deep_convnet import DeepConvNet
 from common.trainer import Trainer
 
-(x_train, t_train), (x_test, t_test) = load_imgnet(flatten=False)
+(x_train, t_train), (x_test, t_test) = load_fruits(flatten=False)
 
-with open('wrong_list.pkl', 'rb') as f:
+with open('wrong-list.pkl', 'rb') as f:
     wrong_list = pickle.load(f)
 
 
 #データの選別
-x_train_latter = x_train[2000: ]
-x_train = x_train[0: 2000]
-
-t_train_latter = t_train[2000: ]
-t_train = t_train[0: 2000]
+x_train = x_train[5000: ]
+t_train = t_train[5000: ]
 
 
 

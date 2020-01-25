@@ -12,11 +12,8 @@ def get_data():
 
     
     #データの選別
-    x_train_former = x_train[0: 6000]
-    x_train = x_train[6000: ]
-
-    t_train_former = t_train[0: 6000]
-    t_train = t_train[6000: ]
+    x_train = x_train[5000: ]
+    t_train = t_train[5000: ]
 
     return x_train, t_train
 
@@ -57,7 +54,7 @@ for i in range(len(x)):
 
 
 #間違えた問題のindexを保存
-with open('wrong_list.pkl', 'wb') as f:
+with open('wrong-list.pkl', 'wb') as f:
     pickle.dump(wrong_ans, f)
 
 

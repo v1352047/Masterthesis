@@ -10,17 +10,14 @@ from two_layer_net import TwoLayerNet
 # データの読み込み
 (x_train, t_train), (x_test, t_test) = load_fruits(normalize=True, one_hot_label=True)
 
-with open('wrong_list.pkl', 'rb') as f:
+with open('wrong-list.pkl', 'rb') as f:
     wrong_list = pickle.load(f)
 
 
 
 #データの選別
-x_train_former = x_train[: 6000]
-x_train = x_train[6000: ]
-
-t_train_former = t_train[: 6000]
-t_train = t_train[6000: ]
+x_train = x_train[5000: ]
+t_train = t_train[5000: ]
 
 
 
