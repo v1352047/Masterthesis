@@ -13,6 +13,8 @@ from two_layer_net import TwoLayerNet
 with open('wrong-list.pkl', 'rb') as f:
     wrong_list = pickle.load(f)
 
+print("wrong-list", len(wrong_list))
+exit(0)
 
 
 #データの選別

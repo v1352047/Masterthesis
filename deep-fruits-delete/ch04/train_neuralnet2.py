@@ -74,6 +74,8 @@ for i in range(iters_num):
 network.save_params("second-learn.pkl")
 print("Saved Network Parameters!")
 
+print("wrong-list:", len(wrong_list))
+
 
 # グラフの描画
 markers = {'train': 'o', 'test': 's'}

@@ -14,8 +14,8 @@ import numpy as np
 dataset_dir = os.path.dirname(os.path.abspath(__file__))
 save_file = dataset_dir + "/fruits.pkl"
 
-train_num = 12000
-test_num = 800
+train_num = 10800
+test_num = 1200
 img_dim = (3, 100, 100)
 img_size = 30000
 
