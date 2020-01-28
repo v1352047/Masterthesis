@@ -1,9 +1,10 @@
 # coding: utf-8
 import sys, os
 sys.path.append(os.pardir)  # 親ディレクトリのファイルをインポートするための設定
+sys.path.append("../../../dataset")  # 親ディレクトリのファイルをインポートするための設定
 import cupy as cp
 import pickle
-from dataset.imgnet import load_imgnet
+from fruits import load_fruits
 from common.functions import sigmoid, softmax
 
 
@@ -16,7 +17,7 @@ config.GPU = True
 
 
 def get_data():
-    (x_train, t_train), (x_test, t_test) = load_imgnet(normalize=True, one_hot_label=False)
+    (x_train, t_train), (x_test, t_test) = load_fruits(normalize=True, one_hot_label=False)
 
     #GPUのメモリにデータを移動
     x_test = to_gpu(x_test)

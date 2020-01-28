@@ -1,11 +1,12 @@
 # coding: utf-8
 import sys, os
 sys.path.append(os.pardir)  # 親ディレクトリのファイルをインポートするための設定
+sys.path.append("../../../dataset")  # 親ディレクトリのファイルをインポートするための設定
 from common import config
 from common.util import to_cpu, to_gpu
 import cupy as cp
 import matplotlib.pyplot as plt
-from dataset.imgnet import load_imgnet
+from fruits import load_fruits
 from two_layer_net import TwoLayerNet
 
 
@@ -20,7 +21,7 @@ config.GPU = True
 
 
 # データの読み込み
-(x_train, t_train), (x_test, t_test) = load_imgnet(normalize=True, one_hot_label=True)
+(x_train, t_train), (x_test, t_test) = load_fruits(normalize=True, one_hot_label=True)
 
 
 

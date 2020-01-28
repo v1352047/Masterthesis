@@ -1,9 +1,10 @@
 # coding: utf-8
 import sys, os
 sys.path.append(os.pardir)  # 親ディレクトリのファイルをインポートするための設定
+sys.path.append("../../../dataset")  # 親ディレクトリのファイルをインポートするための設定
 from common import config
 from common.util import to_cpu, to_gpu
-from dataset.fruits import load_fruits
+from fruits import load_fruits
 from deep_convnet import DeepConvNet
 from common.trainer import Trainer
 
