@@ -10,8 +10,8 @@ from two_layer_net import TwoLayerNet
 # データの読み込み
 (x_train, t_train), (x_test, t_test) = load_fruits(normalize=True, one_hot_label=True)
 
-x_train = x_train[: 7200]
-t_train = t_train[: 7200]
+x_train = x_train[: 8123]
+t_train = t_train[: 8123]
 
 
 network = TwoLayerNet(input_size=30000, hidden_size=50, output_size=4)
