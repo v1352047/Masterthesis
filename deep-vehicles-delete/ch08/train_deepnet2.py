@@ -3,6 +3,7 @@ import sys, os
 sys.path.append(os.pardir)  # 親ディレクトリのファイルをインポートするための設定
 sys.path.append("../../../dataset")  # 親ディレクトリのファイルをインポートするための設定
 import numpy as np
+import pickle
 import matplotlib.pyplot as plt
 from vehicles import load_vehicles
 from deep_convnet import DeepConvNet
