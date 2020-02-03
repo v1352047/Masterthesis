@@ -79,6 +79,24 @@ class DeepConvNet:
                 x = layer.forward(x)
         return x
 
+
+    def predict_for_select(self, x, train_flg=False, num_limit=500):
+        y = cp.empty([0, 4])
+        x_origin = x
+        for i in range(0, len(x), num_limit):
+            x = x_origin[i: i + num_limit]
+            print("Finished ", i, "/", len(x_origin))
+
+            for layer in self.layers:
+                if isinstance(layer, Dropout):
+                    x = layer.forward(x, train_flg)
+                else:
+                    x = layer.forward(x)
+
+            y = cp.r_[y, x]
+        return y
+
+
     def loss(self, x, t):
         y = self.predict(x, train_flg=True)
         return self.last_layer.forward(y, t)

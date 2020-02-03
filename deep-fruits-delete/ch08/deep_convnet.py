@@ -84,6 +84,7 @@ class DeepConvNet:
         x_origin = x
         for i in range(0, len(x), num_limit):
             x = x_origin[i: i + num_limit]
+            print("Finished ", i, "/", len(x_origin))
 
             for layer in self.layers:
                 if isinstance(layer, Dropout):

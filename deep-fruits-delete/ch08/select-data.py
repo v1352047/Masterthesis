@@ -24,7 +24,7 @@ accuracy = 0
 wrong_ans = []
 
 
-y = network.predict_for_select(x_train)
+y = network.predict_for_select(x_train, num_limit=100)
 p = np.argmax(y, 1)
 wrong_ans = [key for key, value in enumerate(p == t_train) if not value]
 accuracy = sum(p == t_train) / len(x_train)
